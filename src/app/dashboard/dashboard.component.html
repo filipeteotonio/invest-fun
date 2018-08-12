@@ -4,10 +4,30 @@
 
             <div class="col-lg-12 col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-warning">
-                        <h4 class="card-title">Company Stats</h4>
-                        <p class="card-category"> A fundamentalist investigation</p>
+
+                    <div class="card-header card-header-tabs card-header-warning">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h4 class="card-title">Status da companhia</h4>
+                                <p class="card-category"> Uma investigação fundamentalista</p>
+
+                            </div>
+
+                            <div class="col-md-4"></div>
+
+                            <div class="col-md-1" *ngIf="company.info.cotacao !== ''">
+                                <button mat-button>
+                                    <i class="material-icons">done_all </i>
+                                    Avaliar
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
+
                     <div class="card-body table-responsive">
                         <table class="table table-hover">
                             <thead class="text-warning">
@@ -75,33 +95,33 @@
                                 <td class="table-data">{{company.fundamentals.marg_bruta}}</td>
                             </tr>
                             <tr>
-                                <td class="text-warning table-label"> PSR </td>
+                                <td class="text-warning table-label"> PSR</td>
                                 <td>{{company.fundamentals.psr}}</td>
-                                <td class="text-warning table-label"> Margem EBIT </td>
+                                <td class="text-warning table-label"> Margem EBIT</td>
                                 <td class="table-data">{{company.fundamentals.marg_ebit}}</td>
                             </tr>
                             <tr>
                                 <td class="text-warning table-label"> P/Ativos</td>
                                 <td>{{company.fundamentals.p_ativos}}</td>
-                                <td class="text-warning table-label"> Margem Líquida </td>
+                                <td class="text-warning table-label"> Margem Líquida</td>
                                 <td class="table-data"> {{company.fundamentals.marg_liquida}}</td>
                             </tr>
                             <tr>
-                                <td class="text-warning table-label"> ROIC </td>
+                                <td class="text-warning table-label"> ROIC</td>
                                 <td>{{company.fundamentals.roic}}</td>
-                                <td class="text-warning table-label"> ROE </td>
+                                <td class="text-warning table-label"> ROE</td>
                                 <td class="table-data">{{company.fundamentals.roe}}</td>
                             </tr>
                             <tr>
-                                <td class="text-warning table-label"> Dividend Yield </td>
+                                <td class="text-warning table-label"> Dividend Yield</td>
                                 <td>{{company.fundamentals.div_yield}}</td>
-                                <td class="text-warning table-label"> Liquidez Corrente </td>
+                                <td class="text-warning table-label"> Liquidez Corrente</td>
                                 <td class="table-data">{{company.fundamentals.liquidez_corr}}</td>
                             </tr>
                             <tr>
-                                <td class="text-warning table-label"> Dívida Bruta / Patrimônio Líq. </td>
+                                <td class="text-warning table-label"> Dívida Bruta / Patrimônio Líq.</td>
                                 <td>{{company.fundamentals.div_br_patrim}}</td>
-                                <td class="text-warning table-label"> Crescimento Receita Líq. em 5 anos </td>
+                                <td class="text-warning table-label"> Crescimento Receita Líq. em 5 anos</td>
                                 <td class="table-data">{{company.fundamentals.cres_rec_5a}}</td>
                             </tr>
                             </tbody>
@@ -111,7 +131,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
