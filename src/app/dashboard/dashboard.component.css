@@ -1,0 +1,21 @@
+.table-label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.table-data {
+    /*text-align: right;*/
+}
+
+.table-title {
+    font-weight: 600;
+    font-size: 1.10rem;
+}
+
+/*table {*/
+    /*table-layout: fixed;*/
+/*}*/
+
+/*td {*/
+    /*width: 33%;*/
+/*}*/
