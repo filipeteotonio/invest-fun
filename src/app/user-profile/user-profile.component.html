@@ -1,102 +1,205 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-12">
               <div class="card">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title">Edit Profile</h4>
-                      <p class="card-category">Complete your profile</p>
+                  <div class="card-header card-header-tabs card-header-warning">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+                              <ul class="nav nav-tabs" data-tabs="tabs">
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link active" href="#criterios" data-toggle="tab">
+                                          <i class="material-icons">list</i> Critérios
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link" href="#avaliacao" data-toggle="tab">
+                                          <i class="material-icons">done_all</i> Avaliação
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
                   </div>
                   <div class="card-body">
-                      <form>
-                          <div class="row">
-                              <div class="col-md-5">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Company (disabled)" disabled>
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-3">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Username">
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
-                                  </mat-form-field>
-                              </div>
+                      <div class="tab-content">
+                          <div class="tab-pane active" id="criterios">
+                              <!--<table class="table table-hover">-->
+                                  <!--<tbody>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label">P/L</td>-->
+                                      <!--<input placeholder="Máximo">-->
+                                      <!--<input placeholder="Mínimo">-->
+                                      <!--<td class="text-warning table-label"> LPA</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.lpa}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> P/VP</td>-->
+                                      <!--<td>{{company.fundamentals.p_vp}}</td>-->
+                                      <!--<td class="text-warning table-label"> VPA</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.vpa}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> P/EBIT</td>-->
+                                      <!--<td>{{company.fundamentals.p_ebit}}</td>-->
+                                      <!--<td class="text-warning table-label"> Margem Bruta</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.marg_bruta}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> PSR</td>-->
+                                      <!--<td>{{company.fundamentals.psr}}</td>-->
+                                      <!--<td class="text-warning table-label"> Margem EBIT</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.marg_ebit}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> P/Ativos</td>-->
+                                      <!--<td>{{company.fundamentals.p_ativos}}</td>-->
+                                      <!--<td class="text-warning table-label"> Margem Líquida</td>-->
+                                      <!--<td class="table-data"> {{company.fundamentals.marg_liquida}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> ROIC</td>-->
+                                      <!--<td>{{company.fundamentals.roic}}</td>-->
+                                      <!--<td class="text-warning table-label"> ROE</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.roe}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> Dividend Yield</td>-->
+                                      <!--<td>{{company.fundamentals.div_yield}}</td>-->
+                                      <!--<td class="text-warning table-label"> Liquidez Corrente</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.liquidez_corr}}</td>-->
+                                  <!--</tr>-->
+                                  <!--<tr>-->
+                                      <!--<td class="text-warning table-label"> Dívida Bruta / Patrimônio Líq.</td>-->
+                                      <!--<td>{{company.fundamentals.div_br_patrim}}</td>-->
+                                      <!--<td class="text-warning table-label"> Crescimento Receita Líq. em 5 anos</td>-->
+                                      <!--<td class="table-data">{{company.fundamentals.cres_rec_5a}}</td>-->
+                                  <!--</tr>-->
+                                  <!--</tbody>-->
+                              <!--</table>-->
                           </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fist Name" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Last Name" type="text">
-                                </mat-form-field>
-                              </div>
+                          <div class="tab-pane" id="avaliacao">
+                              <table class="table">
+                                  <tbody>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check">
+                                              <label class="form-check-label">
+                                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                                  <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                              </label>
+                                          </div>
+                                      </td>
+                                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                      </td>
+                                      <td class="td-actions text-right">
+                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">edit</i>
+                                          </button>
+                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check">
+                                              <label class="form-check-label">
+                                                  <input class="form-check-input" type="checkbox" value="">
+                                                  <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                              </label>
+                                          </div>
+                                      </td>
+                                      <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                      <td class="td-actions text-right">
+                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">edit</i>
+                                          </button>
+                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  </tbody>
+                              </table>
                           </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Adress" type="text">
-                                </mat-form-field>
-                              </div>
+                          <div class="tab-pane" id="settings">
+                              <table class="table">
+                                  <tbody>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check">
+                                              <label class="form-check-label">
+                                                  <input class="form-check-input" type="checkbox" value="">
+                                                  <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                              </label>
+                                          </div>
+                                      </td>
+                                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                      <td class="td-actions text-right">
+                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">edit</i>
+                                          </button>
+                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check">
+                                              <label class="form-check-label">
+                                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                                  <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                              </label>
+                                          </div>
+                                      </td>
+                                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                      </td>
+                                      <td class="td-actions text-right">
+                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">edit</i>
+                                          </button>
+                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <div class="form-check">
+                                              <label class="form-check-label">
+                                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                                  <span class="form-check-sign">
+                                                          <span class="check"></span>
+                                                      </span>
+                                              </label>
+                                          </div>
+                                      </td>
+                                      <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                      <td class="td-actions text-right">
+                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">edit</i>
+                                          </button>
+                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  </tbody>
+                              </table>
                           </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="City" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Country" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Postal Code" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <label>About Me</label>
-                                <mat-form-field class="example-full-width">
-                                   <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
-                                 </mat-form-field>
-                                  <!-- <div class="form-group">
-
-                                      <div class="form-group">
-                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                          <textarea class="form-control" rows="5"></textarea>
-                                      </div>
-                                  </div> -->
-                              </div>
-                          </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
-                          <div class="clearfix"></div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-profile">
-                  <div class="card-avatar">
-                      <a href="#pablo">
-                          <img class="img" src="../assets/img/faces/marc.jpg" />
-                      </a>
-                  </div>
-                  <div class="card-body">
-                      <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                      <h4 class="card-title">Alec Thompson</h4>
-                      <p class="card-description">
-                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                      </p>
-                      <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+                      </div>
                   </div>
               </div>
           </div>
