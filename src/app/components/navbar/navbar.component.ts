@@ -3,6 +3,9 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {Company} from '../../models/company';
+import {DashboardComponent} from '../../dashboard/dashboard.component';
+import {CompanyService} from '../../services/company.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +19,8 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
     companyPaper: string;
-    constructor(private http: HttpClient, location: Location,  private element: ElementRef, private router: Router) {
+    constructor(private http: HttpClient, private companyService: CompanyService,
+                location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -41,16 +45,8 @@ export class NavbarComponent implements OnInit {
             return;
         }
 
-        let url = 'http://localhost:9080/crawl.json?spider_name=fundamentus&url=http://www.fundamentus.com.br/detalhes.php?papel=MEU-PAPEL&x=35&y=11&callback=parse&max_requests=1';
-        url = url.replace('MEU-PAPEL', this.companyPaper);
-
-        console.log(url);
-
-        this.http.get(url).subscribe((result) => {
-            console.log(result.items);
-        })
-
-
+        this.companyService.getCompanyByPaper(this.companyPaper);
+        this.router.navigate(['/dashboard']);
     }
 
     sidebarOpen() {
