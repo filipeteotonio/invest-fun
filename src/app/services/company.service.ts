@@ -24,8 +24,8 @@ export class CompanyService {
     const paperUrl = this.url.replace('MEU-PAPEL', paper);
 
     this.http.get(paperUrl).subscribe((result) => {
-      // console.log(result);
-      this.companySource.next(result['items']);
+      // console.log(result['items'][0]);
+      this.companySource.next(result['items'][0]);
     });
   }
 

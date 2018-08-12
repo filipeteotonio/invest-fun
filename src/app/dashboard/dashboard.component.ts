@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
     this.companyService.currentCompany.subscribe((company) => {
         this.company = company;
-        console.log(this.company);
+        // console.log(this.company);
     })
 
 
