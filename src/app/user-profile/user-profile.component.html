@@ -26,178 +26,288 @@
                   <div class="card-body">
                       <div class="tab-content">
                           <div class="tab-pane active" id="criterios">
-                              <!--<table class="table table-hover">-->
-                                  <!--<tbody>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label">P/L</td>-->
-                                      <!--<input placeholder="Máximo">-->
-                                      <!--<input placeholder="Mínimo">-->
-                                      <!--<td class="text-warning table-label"> LPA</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.lpa}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> P/VP</td>-->
-                                      <!--<td>{{company.fundamentals.p_vp}}</td>-->
-                                      <!--<td class="text-warning table-label"> VPA</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.vpa}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> P/EBIT</td>-->
-                                      <!--<td>{{company.fundamentals.p_ebit}}</td>-->
-                                      <!--<td class="text-warning table-label"> Margem Bruta</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.marg_bruta}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> PSR</td>-->
-                                      <!--<td>{{company.fundamentals.psr}}</td>-->
-                                      <!--<td class="text-warning table-label"> Margem EBIT</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.marg_ebit}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> P/Ativos</td>-->
-                                      <!--<td>{{company.fundamentals.p_ativos}}</td>-->
-                                      <!--<td class="text-warning table-label"> Margem Líquida</td>-->
-                                      <!--<td class="table-data"> {{company.fundamentals.marg_liquida}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> ROIC</td>-->
-                                      <!--<td>{{company.fundamentals.roic}}</td>-->
-                                      <!--<td class="text-warning table-label"> ROE</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.roe}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> Dividend Yield</td>-->
-                                      <!--<td>{{company.fundamentals.div_yield}}</td>-->
-                                      <!--<td class="text-warning table-label"> Liquidez Corrente</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.liquidez_corr}}</td>-->
-                                  <!--</tr>-->
-                                  <!--<tr>-->
-                                      <!--<td class="text-warning table-label"> Dívida Bruta / Patrimônio Líq.</td>-->
-                                      <!--<td>{{company.fundamentals.div_br_patrim}}</td>-->
-                                      <!--<td class="text-warning table-label"> Crescimento Receita Líq. em 5 anos</td>-->
-                                      <!--<td class="table-data">{{company.fundamentals.cres_rec_5a}}</td>-->
-                                  <!--</tr>-->
-                                  <!--</tbody>-->
-                              <!--</table>-->
+                              <div class="card-body">
+                                  <form>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="P / L" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="P / VP" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="P / EBIT" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="PSR" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="P / Ativos" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="LPA" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="VPA" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Margem Bruta" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Margem EBIT" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Margem Líquida" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="ROE" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="ROIC" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Dividend Yield" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Liquidez Corrente" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Dívida Bruta / Patrimônio Líquido" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Crescimento da Receita (5 anos)" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+
+                                      <button mat-raised-button type="submit" class="btn btn-warning pull-right">Salvar</button>
+                                      <div class="clearfix"></div>
+                                  </form>
+                              </div>
                           </div>
                           <div class="tab-pane" id="avaliacao">
-                              <table class="table">
-                                  <tbody>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                                  <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                      </td>
-                                      <td class="td-actions text-right">
-                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">edit</i>
-                                          </button>
-                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">close</i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="">
-                                                  <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                      <td class="td-actions text-right">
-                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">edit</i>
-                                          </button>
-                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">close</i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                          <div class="tab-pane" id="settings">
-                              <table class="table">
-                                  <tbody>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="">
-                                                  <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                      <td class="td-actions text-right">
-                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">edit</i>
-                                          </button>
-                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">close</i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                                  <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                      </td>
-                                      <td class="td-actions text-right">
-                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">edit</i>
-                                          </button>
-                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">close</i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          <div class="form-check">
-                                              <label class="form-check-label">
-                                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                                  <span class="form-check-sign">
-                                                          <span class="check"></span>
-                                                      </span>
-                                              </label>
-                                          </div>
-                                      </td>
-                                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                      <td class="td-actions text-right">
-                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">edit</i>
-                                          </button>
-                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                              <i class="material-icons">close</i>
-                                          </button>
-                                      </td>
-                                  </tr>
-                                  </tbody>
-                              </table>
+                              <p> kkkk </p>
                           </div>
                       </div>
                   </div>
