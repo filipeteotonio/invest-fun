@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Router} from '@angular/router';
 import {Company} from '../models/company';
 import {CompanyService} from '../services/company.service';
+import {EvaluationService} from '../services/evaluation.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,20 +12,29 @@ import {CompanyService} from '../services/company.service';
 
 export class DashboardComponent implements OnInit {
 
+  isCompanyFound = false;
   company: Company;
-  constructor(private router: ActivatedRoute, private companyService: CompanyService) {
+  constructor(private router: Router, private companyService: CompanyService) {
 
 
     this.companyService.currentCompany.subscribe((company) => {
         this.company = company;
         // console.log(this.company);
-    })
+    });
+
+    this.companyService.isCompanyFound.subscribe((found) => {
+      this.isCompanyFound = found;
+    });
 
 
   }
 
   ngOnInit() {
 
+  }
+
+  callEvaluation() {
+    this.router.navigate(['evaluation']);
   }
 
 }

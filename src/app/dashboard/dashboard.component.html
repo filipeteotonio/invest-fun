@@ -18,8 +18,8 @@
 
                             <div class="col-md-4"></div>
 
-                            <div class="col-md-1" *ngIf="company.info.cotacao !== ''">
-                                <button mat-button>
+                            <div class="col-md-1" *ngIf="isCompanyFound">
+                                <button mat-button (click)="callEvaluation()" >
                                     <i class="material-icons">done_all </i>
                                     Avaliar
                                 </button>

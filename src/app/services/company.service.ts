@@ -17,6 +17,9 @@ export class CompanyService {
   private companySource = new BehaviorSubject(new Company());
   currentCompany = this.companySource.asObservable();
 
+  private companyFoundSource = new BehaviorSubject(false);
+  isCompanyFound = this.companyFoundSource.asObservable();
+
   constructor(private http: HttpClient) {
   }
 
@@ -26,6 +29,7 @@ export class CompanyService {
     this.http.get(paperUrl).subscribe((result) => {
       // console.log(result['items'][0]);
       this.companySource.next(result['items'][0]);
+      this.companyFoundSource.next(true);
     });
   }
 
