@@ -368,26 +368,8 @@ fieldset[disabled] .form-group .form-control{
   background-repeat: no-repeat;
 }
 
-
-
-
-
 .mat-form-field{
   display: block !important;
-}
-
-.has-success{
-  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
-  .mat-form-field-empty.mat-form-field-label{
-    color: #4caf50;
-  }
-  &.mat-focused{
-    .mat-input-underline{
-      .mat-input-ripple{
-        background-color: #4caf50;
-      }
-    }
-  }
 }
 
 .has-danger{
@@ -407,21 +389,6 @@ fieldset[disabled] .form-group .form-control{
   &.mat-focused .mat-form-field-label{
     color: #f44336;
   }
-}
-form .ng-valid{
-  &.mat-focused .mat-form-field-label,
-  .mat-focused .mat-form-field-label,
-  .mat-form-field-label{
-    color: #4caf50;
-  }
-    .mat-input-underline{
-      background-color: #4caf50;
-      height: 2px;
-      .mat-input-ripple{
-        background-color: #4caf50;
-      }
-    }
-
 }
 .mat-input-placeholder {
     color: rgba(0, 0, 0, 0.38);

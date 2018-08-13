@@ -1,0 +1,64 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-tabs card-header-warning">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+                              <ul class="nav nav-tabs" data-tabs="tabs">
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link active" href="#criterios" data-toggle="tab">
+                                          <i class="material-icons">list</i> Critérios
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a mat-button class="nav-link" href="#avaliacao" data-toggle="tab">
+                                          <i class="material-icons">done_all</i> Avaliação
+                                          <div class="ripple-container"></div>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="tab-content">
+                          <div class="tab-pane active" id="criterios">
+                              <div class="card-body">
+                                  <form>
+                                      <div class="row" *ngFor="let criteria of criterias">
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="{{criteria.name}}" disabled>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Mínimo" name="{{criteria.attr}}"
+                                                         [(ngModel)]="criteria.min_val" type="number" max="5">
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <mat-form-field class="example-full-width">
+                                                  <input matInput placeholder="Máximo" name="{{criteria.attr}}"
+                                                         [(ngModel)]="criteria.max_val" type="number">
+                                              </mat-form-field>
+                                          </div>
+                                      </div>
+                                      <button mat-raised-button type="submit" class="btn btn-warning pull-right">Salvar</button>
+                                      <div class="clearfix"></div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div class="tab-pane" id="avaliacao">
+                              <p> kkkk </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
