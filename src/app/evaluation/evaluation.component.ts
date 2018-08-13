@@ -11,6 +11,7 @@ import {CompanyService} from '../services/company.service';
 export class EvaluationComponent implements OnInit {
 
   company: any;
+  isCompanyFound: boolean;
   criterias = [Criteria];
   constructor(private evalService: EvaluationService, private companyService: CompanyService) {
     this.evalService.currentCriteria.subscribe(criterias => {
@@ -19,6 +20,10 @@ export class EvaluationComponent implements OnInit {
 
     this.companyService.currentCompany.subscribe((company) => {
       this.company = company;
+    });
+
+    this.companyService.isCompanyFound.subscribe((found) => {
+        this.isCompanyFound = found;
     });
   }
 
