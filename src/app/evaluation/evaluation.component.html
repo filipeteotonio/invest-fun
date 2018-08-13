@@ -29,19 +29,19 @@
                             <div class="tab-pane active" id="criterios">
                                 <div class="card-body">
                                     <div class="row" *ngFor="let criteria of criterias">
-                                        <div class="col-md-4">
-                                            <mat-form-field class="example-full-width">
+                                        <div class="col-md-4 col-sm-3">
+                                            <mat-form-field>
                                                 <input matInput placeholder="{{criteria.name}}" disabled>
                                             </mat-form-field>
                                         </div>
-                                        <div class="col-md-4">
-                                            <mat-form-field class="example-full-width">
+                                        <div class="col-md-4 col-sm-3">
+                                            <mat-form-field>
                                                 <input matInput placeholder="Mínimo"
                                                        [(ngModel)]="criteria.min_val" type="number" max="5">
                                             </mat-form-field>
                                         </div>
-                                        <div class="col-md-4">
-                                            <mat-form-field class="example-full-width">
+                                        <div class="col-md-4 col-sm-3">
+                                            <mat-form-field>
                                                 <input matInput placeholder="Máximo"
                                                        [(ngModel)]="criteria.max_val" type="number">
                                             </mat-form-field>
