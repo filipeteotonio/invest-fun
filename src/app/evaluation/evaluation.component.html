@@ -14,7 +14,8 @@
                                       </a>
                                   </li>
                                   <li class="nav-item">
-                                      <a mat-button class="nav-link" href="#avaliacao" data-toggle="tab">
+                                      <a mat-button class="nav-link" (click)="evaluate()"
+                                         href="#avaliacao" data-toggle="tab">
                                           <i class="material-icons">done_all</i> Avaliação
                                           <div class="ripple-container"></div>
                                       </a>
@@ -27,7 +28,6 @@
                       <div class="tab-content">
                           <div class="tab-pane active" id="criterios">
                               <div class="card-body">
-                                  <form>
                                       <div class="row" *ngFor="let criteria of criterias">
                                           <div class="col-md-4">
                                               <mat-form-field class="example-full-width">
@@ -36,18 +36,17 @@
                                           </div>
                                           <div class="col-md-4">
                                               <mat-form-field class="example-full-width">
-                                                  <input matInput placeholder="Mínimo" name="{{criteria.attr}}"
+                                                  <input matInput placeholder="Mínimo"
                                                          [(ngModel)]="criteria.min_val" type="number" max="5">
                                               </mat-form-field>
                                           </div>
                                           <div class="col-md-4">
                                               <mat-form-field class="example-full-width">
-                                                  <input matInput placeholder="Máximo" name="{{criteria.attr}}"
+                                                  <input matInput placeholder="Máximo"
                                                          [(ngModel)]="criteria.max_val" type="number">
                                               </mat-form-field>
                                           </div>
                                       </div>
-                                  </form>
                               </div>
                           </div>
                           <div class="tab-pane" id="avaliacao">

@@ -46,7 +46,6 @@ export class NavbarComponent implements OnInit {
         }
 
         this.companyService.getCompanyByPaper(this.companyPaper);
-        this.router.navigate(['/dashboard']);
     }
 
     sidebarOpen() {

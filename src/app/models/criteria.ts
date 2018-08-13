@@ -4,6 +4,7 @@ export class Criteria {
     public name: string;
     public max_val: number;
     public min_val: number;
+    public approved = false;
 
     constructor(attr, name, min, max) {
         this.attr = attr;
