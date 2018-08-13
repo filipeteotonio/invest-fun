@@ -13,6 +13,10 @@ export class EvaluationComponent implements OnInit {
   company: any;
   isCompanyFound: boolean;
   criterias = [Criteria];
+
+  approvedCriterias = [];
+  failedCriterias = [];
+
   constructor(private evalService: EvaluationService, private companyService: CompanyService) {
     this.evalService.currentCriteria.subscribe(criterias => {
       this.criterias = criterias;
@@ -40,15 +44,13 @@ export class EvaluationComponent implements OnInit {
         // criteria['approved'] = this.evaluateCriteria(criteria, this.company.fundamentals[criteria['attr']]);
         if (this.evaluateCriteria(criteria, this.company.fundamentals[criteria['attr']])) {
           criteria['approved'] = true;
+          criteria['c_value'] = this.company.fundamentals[criteria['attr']];
         }
     }
 
 
-    const approvedCriterias = usedCriterias.filter(criteria => criteria['approved'] === true);
-    const failedCriterias   = usedCriterias.filter(criteria => criteria['approved'] === false);
-
-    console.log(approvedCriterias);
-    console.log(failedCriterias);
+    this.approvedCriterias = usedCriterias.filter(criteria => criteria['approved'] === true);
+    this.failedCriterias   = usedCriterias.filter(criteria => criteria['approved'] === false);
 
   }
 
