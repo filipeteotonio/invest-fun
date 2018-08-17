@@ -4,7 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import { Router } from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Company} from '../../models/company';
-import {DashboardComponent} from '../../dashboard/dashboard.component';
+import {GeneralInfoComponent} from '../../dashboard/general.info.component';
 import {CompanyService} from '../../services/company.service';
 import {TitleService} from '../../services/title.service';
 

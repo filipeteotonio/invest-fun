@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Company} from '../models/company';
 import {CompanyService} from '../services/company.service';
-import {EvaluationService} from '../services/evaluation.service';
 import {TitleService} from '../services/title.service';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  templateUrl: './general.info.component.html',
+  styleUrls: ['./general.info.component.css']
 })
 
-export class DashboardComponent implements OnInit {
+export class GeneralInfoComponent implements OnInit {
 
   isCompanyFound = false;
   company: Company;
@@ -36,7 +35,7 @@ export class DashboardComponent implements OnInit {
   }
 
   callEvaluation() {
-    this.router.navigate(['evaluation']);
+    this.router.navigate(['avaliacao']);
   }
 
 }

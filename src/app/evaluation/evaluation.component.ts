@@ -44,11 +44,15 @@ export class EvaluationComponent implements OnInit {
 
     const usedCriterias = this.getUsedCriterias();
     for (const criteria of usedCriterias) {
+
+        criteria['c_value'] = this.company.fundamentals[criteria['attr']];
+        criteria['approved'] = this.evaluateCriteria(criteria, this.company.fundamentals[criteria['attr']]);
+
         // criteria['approved'] = this.evaluateCriteria(criteria, this.company.fundamentals[criteria['attr']]);
-        if (this.evaluateCriteria(criteria, this.company.fundamentals[criteria['attr']])) {
-          criteria['approved'] = true;
-          criteria['c_value'] = this.company.fundamentals[criteria['attr']];
-        }
+        // if (this.evaluateCriteria(criteria, this.company.fundamentals[criteria['attr']])) {
+        //   criteria['approved'] = true;
+        //   criteria['c_value'] = this.company.fundamentals[criteria['attr']];
+        // }
     }
 
 
