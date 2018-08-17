@@ -9,11 +9,10 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import {Company} from '../../models/company';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'evaluation',   component: EvaluationComponent },
-    { path: 'table-list',     component: TableListComponent },
+    { path: 'visao-geral',      component: DashboardComponent },
+    { path: 'avaliacao',   component: EvaluationComponent },
+    // { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'notifications',  component: NotificationsComponent }
+    // { path: 'icons',          component: IconsComponent },
+    // { path: 'notifications',  component: NotificationsComponent }
 ];

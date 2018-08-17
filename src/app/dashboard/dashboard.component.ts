@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {Company} from '../models/company';
 import {CompanyService} from '../services/company.service';
 import {EvaluationService} from '../services/evaluation.service';
+import {TitleService} from '../services/title.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,8 @@ export class DashboardComponent implements OnInit {
 
   isCompanyFound = false;
   company: Company;
-  constructor(private router: Router, private companyService: CompanyService) {
+  constructor(private router: Router, private titleService: TitleService,
+              private companyService: CompanyService) {
 
 
     this.companyService.currentCompany.subscribe((company) => {
@@ -30,7 +32,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.titleService.setTitle('Visão Geral');
   }
 
   callEvaluation() {

@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 import {Company} from '../../models/company';
 import {DashboardComponent} from '../../dashboard/dashboard.component';
 import {CompanyService} from '../../services/company.service';
+import {TitleService} from '../../services/title.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,15 +15,21 @@ import {CompanyService} from '../../services/company.service';
 })
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
+    private title: string;
     location: Location;
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
     companyPaper: string;
-    constructor(private http: HttpClient, private companyService: CompanyService,
+    constructor(private http: HttpClient, private titleService: TitleService,
+                private companyService: CompanyService,
                 location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
+
+          this.titleService.currentTitle.subscribe((result) => {
+              this.title = result;
+          })
     }
 
     ngOnInit() {
@@ -119,20 +126,4 @@ export class NavbarComponent implements OnInit {
 
         }
     };
-
-    getTitle() {
-      let titlee = this.location.prepareExternalUrl(this.location.path());
-      if (titlee.charAt(0) === '#') {
-          titlee = titlee.slice( 2 );
-      }
-      titlee = titlee.split('/').pop();
-
-      for (let item = 0; item < this.listTitles.length; item++) {
-          if (this.listTitles[item].path === titlee) {
-              return this.listTitles[item].title;
-          }
-      }
-
-      return titlee.charAt(0).toUpperCase() + titlee.slice(1);
-    }
 }

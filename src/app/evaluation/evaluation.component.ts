@@ -3,6 +3,7 @@ import {EvaluationService} from '../services/evaluation.service';
 import {Criteria} from '../models/criteria';
 import {CompanyService} from '../services/company.service';
 import {NotificationService} from '../services/notificationService';
+import {TitleService} from '../services/title.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -18,7 +19,8 @@ export class EvaluationComponent implements OnInit {
   approvedCriterias = [];
   failedCriterias = [];
 
-  constructor(private evalService: EvaluationService, private notificationService: NotificationService,
+  constructor(private evalService: EvaluationService, private titleService: TitleService,
+              private notificationService: NotificationService,
               private companyService: CompanyService) {
     this.evalService.currentCriteria.subscribe(criterias => {
       this.criterias = criterias;
@@ -34,8 +36,7 @@ export class EvaluationComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
+    this.titleService.setTitle('Avaliação');
 
   }
 
