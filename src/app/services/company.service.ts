@@ -31,7 +31,7 @@ export class CompanyService {
       // console.log(result['items'][0]);
 
       if (result['items'].length === 0) {
-          this.notificationService.show('top', 'right', 4, 'Não foi possível encontrar a empresa \''
+          this.notificationService.show('top', 'center', 4, 'Não foi possível encontrar a empresa \''
               + paper + '\'. Certifique-se de que este papel existe e tente novamente.');
 
           return;

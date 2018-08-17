@@ -18,7 +18,7 @@ const routes: Routes = [
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
   }]}
-    // { path: 'dashboard',      component: GeneralInfoComponent },
+    // { path: 'general-info',      component: GeneralInfoComponent },
     // { path: 'evaluation',   component: EvaluationComponent },
     // { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },
@@ -26,7 +26,7 @@ const routes: Routes = [
     // { path: 'maps',           component: MapsComponent },
     // { path: 'notifications',  component: NotificationsComponent },
     // { path: 'upgrade',        component: UpgradeComponent },
-    // { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
+    // { path: '',               redirectTo: 'general-info', pathMatch: 'full' }
 ];
 
 @NgModule({
