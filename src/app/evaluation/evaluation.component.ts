@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EvaluationService} from '../services/evaluation.service';
 import {Criteria} from '../models/criteria';
 import {CompanyService} from '../services/company.service';
+import {NotificationService} from '../services/notificationService';
 
 @Component({
   selector: 'app-user-profile',
@@ -17,7 +18,8 @@ export class EvaluationComponent implements OnInit {
   approvedCriterias = [];
   failedCriterias = [];
 
-  constructor(private evalService: EvaluationService, private companyService: CompanyService) {
+  constructor(private evalService: EvaluationService, private notificationService: NotificationService,
+              private companyService: CompanyService) {
     this.evalService.currentCriteria.subscribe(criterias => {
       this.criterias = criterias;
     });
@@ -51,6 +53,10 @@ export class EvaluationComponent implements OnInit {
 
     this.approvedCriterias = usedCriterias.filter(criteria => criteria['approved'] === true);
     this.failedCriterias   = usedCriterias.filter(criteria => criteria['approved'] === false);
+
+    if (this.failedCriterias.length === 0 && this.approvedCriterias.length > 0) {
+        this.notificationService.show('top', 'center', 2, 'A empresa foi aprovada em todos os critérios!')
+    }
 
   }
 

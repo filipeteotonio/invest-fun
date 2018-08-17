@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Company} from '../models/company';
-
+import {NotificationService} from './notificationService';
+declare var $: any;
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,7 @@ export class CompanyService {
   private companyFoundSource = new BehaviorSubject(false);
   isCompanyFound = this.companyFoundSource.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private notificationService: NotificationService) {
   }
 
   getCompanyByPaper(paper) {
@@ -28,6 +29,15 @@ export class CompanyService {
 
     this.http.get(paperUrl).subscribe((result) => {
       // console.log(result['items'][0]);
+
+      if (result['items'].length === 0) {
+          this.notificationService.show('top', 'right', 4, 'Não foi possível encontrar a empresa \''
+              + paper + '\'. Certifique-se de que este papel existe e tente novamente.');
+
+          return;
+      }
+
+
       this.companySource.next(result['items'][0]);
       this.companyFoundSource.next(true);
     });
