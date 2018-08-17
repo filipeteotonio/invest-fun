@@ -1,38 +1,51 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CompanyService} from '../../services/company.service';
 
 declare const $: any;
+
 declare interface RouteInfo {
     path: string;
     title: string;
     icon: string;
     class: string;
 }
+
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Visão Geral',  icon: 'assignment', class: '' },
-    { path: '/evaluation', title: 'Avaliação',  icon: 'done_all', class: '' },
-    { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon: 'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon: 'bubble_chart', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon: 'notifications', class: '' },
+    {path: '/dashboard', title: 'Visão Geral', icon: 'assignment', class: ''},
+    {path: '/evaluation', title: 'Avaliação', icon: 'done_all', class: ''}
 ];
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems: any[];
+    menuItems: any[];
+    paper: string;
 
-  constructor() { }
+    constructor(private companyService: CompanyService) {
+    }
 
-  ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
-  }
-  isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
-  };
+    ngOnInit() {
+        this.menuItems = ROUTES.filter(menuItem => menuItem);
+    }
+
+    isMobileMenu() {
+        if ($(window).width() > 991) {
+            return false;
+        }
+        return true;
+    };
+
+
+    searchPaper() {
+
+        if (!this.paper) {
+            return;
+        }
+
+        this.companyService.getCompanyByPaper(this.paper);
+    }
+
 }
